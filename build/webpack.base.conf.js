@@ -34,6 +34,16 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.scss$/,
+        use: [{
+            loader: "style-loader" // creates style nodes from JS strings
+        }, {
+            loader: "css-loader" // translates CSS into CommonJS
+        }, {
+            loader: "sass-loader" // compiles Sass to CSS
+        }]
+      },
+      {
         test: /\.(js|vue)$/,
         loader: 'eslint-loader',
         enforce: "pre",
@@ -67,7 +77,7 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
-      }
+      },
     ]
   }
 }
