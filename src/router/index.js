@@ -11,5 +11,6 @@ export default new Router({
       name: 'MainApp',
       component: MainApp
     }
-  ]
+  ],
+  mode: 'history',
 })
